@@ -1,0 +1,34 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="20">
+            <item index="0" class="java.lang.String" itemvalue="inquirer" />
+            <item index="1" class="java.lang.String" itemvalue="django-graphql-auth" />
+            <item index="2" class="java.lang.String" itemvalue="netifaces" />
+            <item index="3" class="java.lang.String" itemvalue="django-mysql-utf8mb4" />
+            <item index="4" class="java.lang.String" itemvalue="xhtml2pdf" />
+            <item index="5" class="java.lang.String" itemvalue="django-db-views" />
+            <item index="6" class="java.lang.String" itemvalue="pdfkit" />
+            <item index="7" class="java.lang.String" itemvalue="django-extensions" />
+            <item index="8" class="java.lang.String" itemvalue="sqlalchemy" />
+            <item index="9" class="java.lang.String" itemvalue="sphinx" />
+            <item index="10" class="java.lang.String" itemvalue="graphene-django" />
+            <item index="11" class="java.lang.String" itemvalue="django" />
+            <item index="12" class="java.lang.String" itemvalue="channels" />
+            <item index="13" class="java.lang.String" itemvalue="graphql-ws" />
+            <item index="14" class="java.lang.String" itemvalue="Telethon" />
+            <item index="15" class="java.lang.String" itemvalue="virtualenv" />
+            <item index="16" class="java.lang.String" itemvalue="graphene-permissions" />
+            <item index="17" class="java.lang.String" itemvalue="pyjwt" />
+            <item index="18" class="java.lang.String" itemvalue="furo" />
+            <item index="19" class="java.lang.String" itemvalue="nose2" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="TaskProblemsInspection" enabled="true" level="ERROR" enabled_by_default="true" editorAttributes="ERRORS_ATTRIBUTES" />
+  </profile>
+</component>

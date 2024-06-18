@@ -14,8 +14,8 @@ class WeatherDataClass:
 class WeatherGetter(WeatherImageMixin):
     API_URL = "https://api.open-meteo.com/v1/forecast"
     PARAMS = {
-        "latitude": 49.4521,  # Широта Нюрнберга
-        "longitude": 11.0767,  # Долгота Нюрнберга
+        "latitude": 49.4521,
+        "longitude": 11.0767,
         "current_weather": True
     }
 

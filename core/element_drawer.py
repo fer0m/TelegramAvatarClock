@@ -43,29 +43,27 @@ class ElementDrawer(CanvasBase):
         self.draw.text(coordinate, self.current_zone, fill=(255, 255, 255), font=self.font)
 
     @set_font_size(60)
-    def draw_weather_temperature(self):
-        bbox = self.draw.textbbox((0, 0), self.current_zone, font=self.font)
-        width_font, height_font = bbox[2] - bbox[0], bbox[3] - bbox[1]
-        coordinate = ((self.canvas.width - width_font) / 2, 380)
-        self.draw.text(coordinate, self.current_zone, fill=(255, 255, 255), font=self.font)
+    def draw_weather_temperature(self, temperature: str):
+        self.draw.text((180, 80), temperature, fill=(255, 255, 255), font=self.font)
 
     def draw_weather(self, weather_data: WeatherDataClass):
         icon_name: str = weather_data.weather_icon_name
         icon: Image = self._get_icon(icon_name)
-        self.canvas.paste(icon, (130, 50), icon)
+        self.canvas.paste(icon, (220, 30), icon)
         self.canvas.save(self.file_name)
 
     @staticmethod
     def _get_icon(icon_name: str) -> Image:
         icon_svg_path = f"{str(main_config.ICONS_DIR)}/{icon_name}.svg"
         icon_png_path = f"{str(main_config.ICONS_DIR)}/{icon_name}.png"
+
         if not os.path.exists(icon_svg_path):
             raise FileNotFoundError(f"SVG file not found: {icon_svg_path}")
         if not os.path.exists(icon_svg_path):
             raise FileNotFoundError(f"SVG file not found: {icon_png_path}")
 
         cairosvg.svg2png(url=icon_svg_path, write_to=icon_png_path, output_width=1000, output_height=1000)
-        icon = Image.open(icon_png_path).resize((75, 75), Image.LANCZOS)
+        icon = Image.open(icon_png_path).resize((50, 50), Image.LANCZOS)
         icon = icon.convert("RGBA")
         data = icon.getdata()
 
@@ -80,7 +78,9 @@ class ElementDrawer(CanvasBase):
         return icon
 
     def draw_temperature(self, weather_data: WeatherDataClass):
-        icon_name: str = str(weather_data.temperature)
-        icon: Image = self._get_icon(icon_name)
-        self.canvas.paste(icon, (130, 50), icon)
+        if weather_data.temperature > 0:
+            temperature: str = f"+{str(weather_data.temperature)}"
+        else:
+            temperature: str = f"-{str(weather_data.temperature)}"
+        self.draw_weather_temperature(temperature)
         self.canvas.save(self.file_name)

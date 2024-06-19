@@ -12,7 +12,6 @@ from core.weather_getter import WeatherGetter, WeatherDataClass
 
 app = FastAPI()
 
-
 @app.get("/")
 async def root():
     canvas_creator: ColoredCanvasCreator = ColoredCanvasCreator()

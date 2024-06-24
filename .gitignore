@@ -1,2 +1,4 @@
 .idea/
 avatar_*
+/core/avatar/
+/celerybeat-schedule

@@ -25,4 +25,4 @@ class CanvasBase:
 
     @staticmethod
     def create_filename():
-        return f"{str(main_config.AVATAR_DIR)}/avatar.png"
+        return main_config.GENERATED_AVATAR_PATH

@@ -2,3 +2,5 @@
 avatar_*
 /core/avatar/
 /celerybeat-schedule
+/anon.session
+/telegram_avatar_changer.db
